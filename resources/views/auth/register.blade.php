@@ -63,7 +63,7 @@ $provincias=[
                 <div class="formLog" id="name">
                     <p class="info">Colocá tu nombre</p>
                     <i class="fas fa-user"></i>
-                    <input id="name" type="text" class=" @error('name') is-invalid @enderror"  name="name" placeholder="Nombre " value="{{ old('name') }}" autofocus required>
+                    <input class=" @error('name') is-invalid @enderror" type="text" name="name" placeholder="Nombre " value="{{ old('name') }}" autofocus required>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@ $provincias=[
                 <div class="formLog" id="lastName">
                     <p class="info">Colocá tu apellido</p>
                     <i class="fas fa-user"></i>
-                    <input id="lastName" class=" @error('lastName') is-invalid @enderror" type="text" name="lastName" placeholder=" Apellido " value="{{ old('lastName') }}" autofocus required>
+                    <input class=" @error('lastName') is-invalid @enderror" type="text" name="lastName" placeholder=" Apellido " value="{{ old('lastName') }}" autofocus required>
                     @error('lastName')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@ $provincias=[
                 <div class="formLog" id="userName">
                     <p class="info">Tu usuario debe contener al menos 6 caracteres</p>
                     <i class="fas fa-user"></i>
-                    <input id="userName" class=" @error('userName') is-invalid @enderror" type="text" name="userName" placeholder=" Elija un nombre de Usuario " value="{{ old('userName') }}" autofocus required>
+                    <input class=" @error('userName') is-invalid @enderror" type="text" name="userName" placeholder=" Elija un nombre de Usuario " value="{{ old('userName') }}" autofocus required>
                     @error('userName')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -93,7 +93,7 @@ $provincias=[
                 <div class="formLog" id="fechaDeNac">
                     <p class="info">Ingresá tu fecha de nacimiento</p>
                     <i class="fas fa-birthday-cake"></i>
-                    <input id="date" class=" @error('date') is-invalid @enderror"  type="date" name="date" value="{{ old('date') }}" autofocus required>
+                    <input class=" @error('date') is-invalid @enderror"  type="date" name="date" value="{{ old('date') }}" autofocus required>
                     @error('date')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -122,7 +122,7 @@ $provincias=[
                 <div class="formLog" id="email">
                     <p class="info">Ingresá tu correo electrónico</p>
                     <i class="fas fa-at"></i>
-                    <input id="email" class=" @error('email') is-invalid @enderror"  type="email" name="email" placeholder="ejemplo@correo.com" value="{{ old('email') }}" autofocus required>
+                    <input class=" @error('email') is-invalid @enderror"  type="email" name="email" placeholder="ejemplo@correo.com" value="{{ old('email') }}" autofocus required>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@ $provincias=[
                 <div class="formLog" id="password">
                     <p class="info">Tu contraseña debe contener: mayúsculas, minúsculas y números</p>
                     <i class="fas fa-key"></i>
-                    <input id="password" class=" @error('password') is-invalid @enderror"  type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
+                    <input class=" @error('password') is-invalid @enderror"  type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -142,15 +142,15 @@ $provincias=[
                     @enderror
                 </div>
                 <div class="formLog" id="password">
-                    <p class="info">Confirmá tu constraseña</p>
+                    <p class="info">Tu contraseña debe contener: mayúsculas, minúsculas y numeros</p>
                     <i class="fas fa-key"></i>
-                    <input id="password-confirm" type="password" name="password1" placeholder="Repite tu contraseña" autofocus required>
+                    <input type="password" name="password1" placeholder="Repite tu contraseña" autofocus required>
                 </div>
 
                 <div class="formLog" id="phone">
                     <p class="info"> Recordá colocar tu número sin el 0 y sin en 15</p>
                     <i class="fas fa-phone"></i>
-                    <input id="phone" class=" @error('phone') is-invalid @enderror"  type="tel" name="phone" pattern="[0-9]{10}" placeholder="Ingresa tu teléfono" value="{{ old('phone') }}" autofocus required>
+                    <input class=" @error('phone') is-invalid @enderror"  type="tel" name="phone" pattern="[0-9]{10}" placeholder="Ingresa tu teléfono" value="{{ old('phone') }}" autofocus required>
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -161,7 +161,7 @@ $provincias=[
                 <div class="formLog" id="avatar">
                     <p class="info">Podés elegir tu avatar</p>
                     <i class="fas fa-image" id="avatar"></i>
-                    <input id="avatar" class="file @error('avatar') is-invalid @enderror" type="file" name="avatar" value= "{{ old('file') }}">
+                    <input class="file @error('avatar') is-invalid @enderror" type="file" name="avatar" value= "{{ old('file') }}">
                     @error('avatar')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -182,5 +182,4 @@ $provincias=[
 
 
         </div>
-
 @endsection
