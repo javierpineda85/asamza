@@ -20,37 +20,24 @@
 
         <div class="container bg-white p-4">
 
-            <h1 class="forms">Bienvenido a</h1>
+            <h1 class="text-center">Bienvenidos</h1>
             <img class="logo" src="img/asalogo.png" alt="">
 
             <form class="login" action="{{ route('login') }}" method="post">
               @csrf
-                <h1 class="forms">Ingresar</h1>
-
-                    <div class="errores">
-                        <ul>
-                            @if (isset($errores))
-                            OOPS! algo salió mal:
-                            @foreach ($errores as $error): ?>
-                            <li>{{ $error }}</li>
-                            @endforeach
-                            Por favor verificá los datos y volvé a intentarlo.
-                          @endif
+                <h2 class="text-center">Ingresar</h2>
 
 
-
-                        </ul>
-                    </div>
                     <div class="formLog" id="email">
                         <p class="info">Ingresá tu correo electrónico</p>
                         <i class="fas fa-at"></i>
-                        <input type="email" name="email" placeholder="ejemplo@correo.com" value="{{old( 'email' )}}" autofocus required>
+                        <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" value="{{old( 'email' )}}" autofocus required>
                     </div>
 
                     <div class="formLog" id="password">
                         <p class="info">Ingresá tu contraseña</p>
                         <i class="fas fa-key"></i>
-                        <input type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
+                        <input id="password" type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
                     </div>
 
                     <button class="form" type="submit" name="button">{{ __('Entrar') }}</button>
@@ -73,7 +60,11 @@
 
                         <p class="formLog">Al ingresar aceptas nuestras políticas de uso.</p><br>
 
-                        <p class="formLog">Si todavía no estás registrado <a href="/register" class="formLog">presiona aquí</a></p>
+                        <p class="formLog">Si todavía no estás registrado
+                            <button class="form orange-button" >
+                              <a href="/register" class="formLog">presiona aquí</a>
+                            </button>
+                          </p>
 
                     </div>
 
@@ -82,4 +73,5 @@
 
         </div>
     </section>
+</body>
 @endsection

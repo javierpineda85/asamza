@@ -35,9 +35,9 @@
         </div> -->
 
               <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn my-2 my-sm-0" type="submit">
-                      <!--<img src="img/header/asa-finder.png" alt="asa-finder" width="20px">--><i class="fas fa-search fa-lg"></i></button>
+                  {{-- <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"> --}}
+                  {{-- <button class="btn my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search fa-lg"></i></button> --}}
               </form>
 
               <div class="ml-auto p-2 bd-highlight"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
@@ -46,9 +46,9 @@
               <div class="ml-auto p-2 bd-highlight"><a href="#"><i class="fab fa-skype"></i></a></div>
               <div>
                   @if (Auth::check())
-                  <label>
+                  <label class="usuario">
                       Bienvenido, {{Auth::user()->name}}
-                      <img src="storage/{{Auth::user()->avatar}}" alt="" width="40px" border-radius=50%>
+                      {{-- <img src="storage/{{Auth::user()->avatar}}" alt="" width="40px" border-radius=50%> --}}
 
                   </label>
 
@@ -65,21 +65,21 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-0">
-                {{-- @if (Auth::check())
-                  @if (Auth::user()->level === 1) --}}
+                @if (Auth::check())
+                  {{-- @if (Auth::user()->level === 1) --}}
                     <li class="nav-item active">
                         <a class="nav-link" href="/admin">Administración <span class="sr-only">(current)</span></a>
                     </li>
-                  {{-- @endif
-                @endif --}}
+                  {{-- @endif --}}
+                @endif
 
                   <li class="nav-item active">
                       <a class="nav-link" "capa-destacado" href="/capacitaciones">Capacitaciones<span class="sr-only">(current)</span></a>
                   </li>
 
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                       <a class="nav-link" href="/working">Proyectos</a>
-                  </li>
+                  </li> --}}
 
                   <li class="nav-item">
                       <a class="nav-link" href="/tramites-online">Tramites Online</a>
@@ -95,7 +95,7 @@
                           <!--<div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>-->
                       </div> --}}
-                  </li>
+                  {{-- </li> --}}
                   <li class="nav-item">
                       <a class="nav-link" href="/nosotros">Nosotros</a>
                   </li>
@@ -119,7 +119,7 @@
                           Mi Perfil
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="perfil.php">Mi perfil</a>
+                          <a class="dropdown-item" href="/perfil">Mi perfil</a>
                           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
                               {{ __('Cerrar Sesión') }}
@@ -133,7 +133,8 @@
                   @else
                   <li class="nav-item">
                       <a class="nav-link" href="/login">Ingresar</a>
-                      @endif
+                  </li>
+                  @endif
 
 
               </ul>
@@ -156,7 +157,7 @@
                     <input type="email" placeholder="Escriba su Correo">
                     <input type="submit" value=" Suscribirse" class="boton-orange w-100">
                 </div>
-                <div class="footer-columna">
+                <div class="footer-columna" style="margin: auto;">
                     <h3 class="font-weight-bolder">Contactos</h3>
                     <span class="d-flex"><i class="fas fa-map-marker-alt mr-2"></i>
                         <p>244 Lorem ipsum dolor sit amet</p>
@@ -165,7 +166,7 @@
                         <p>(+54) 261 669 7897</p>
                     </span>
                     <span class="d-flex"><i class="fas fa-envelope mr-2"></i>
-                        <p>asa.mendozaunidos@gmail.com</p>
+                        <p>info@asamendoza.org</p>
                     </span>
                 </div>
                 <div class="footer-columna">

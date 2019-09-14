@@ -12,6 +12,9 @@ Administración
 
 @section('main')
   <div class="inicio">
+    <div class="banner-standard bg-admin">
+        <h2 class="banner-texto-standard titulos-naranja"><span>ADMINISTRACION</span></h2>
+    </div>
 
       <div class="container-fluid jumbotron pb-0 mb-0">
           <div class="row montserrat text-center font-small">
@@ -21,7 +24,7 @@ Administración
                     Gestioná las capacitaciones desde aqui
                   </p>
                   <p>
-                      <a class="btn" href="#">Acceder</a>
+                      <a class="btn" href="/capacitaciones">Acceder</a>
                   </p>
               </div>
 
@@ -32,7 +35,7 @@ Administración
                     Gestioná los trámites de las municipalidades
                   </p>
                   <p>
-                      <a class="btn" href="#">Acceder</a>
+                      <a class="btn" href="/municipalidades">Acceder</a>
                   </p>
               </div>
 
@@ -42,7 +45,7 @@ Administración
                     Gestioná los permisos de usuarios desde aqui
                   </p>
                   <p>
-                      <a class="btn" href="#">Acceder</a>
+                      <a class="btn" href="/perfil">Acceder</a>
                   </p>
               </div>
 
@@ -53,7 +56,7 @@ Administración
                     Gestioná los proyectos de ASAMZA desde acá.
                   </p>
                   <p>
-                      <a class="btn" href="#">Acceder</a>
+                      <a class="btn" href="/working">Acceder</a>
                   </p>
               </div>
 

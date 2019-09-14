@@ -10,31 +10,42 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
- Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', "HomeController@home");
+Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/register', 'RegisterController@create');
 // Route::post('/register', 'RegisterController@create');
 Route::get('/working','HomeController@working');
 Route::get('/admin','HomeController@admin');// ->middleware("Auth");
 /*
 |--------------------------------------------------------------------------
-| USER CONTROLLER
+|USER CONTROLLER
+
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/perfil', 'UserController@perfil');
+/*
+|--------------------------------------------------------------------------
+| MUNI CONTROLLER
 
 |--------------------------------------------------------------------------
 */
 Route::get('/municipalidades', 'MuniController@all');
 Route::get('/municipalidades/{id}', 'MuniController@detail');// va a listar los tramites por muni
+
 /*
 |--------------------------------------------------------------------------
 | TRAMITES CONTROLLER
 |--------------------------------------------------------------------------
 */
 
-Route::get('/tramites/{id}', 'TramiteController@all');
 // Route::get('/tramites/{id}', 'TramiteController@all');
-// Route::get('/tramites/{id}', 'TramiteController@find');
+// Route::get('/tramites/{id}', 'TramiteController@all');
+Route::get('/tramites/{id}', 'TramiteController@find');
 Route::get('/tramites-online', 'TramiteController@online');
-Route::get('/tramites/agregar-tramite','TramiteController@agregar'); // ->middleware("Auth");
+Route::get('/agregar-tramite','TramiteController@agregar'); // ->middleware("Auth");
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +71,10 @@ Route::get('/capacitaciones','CapacitacionesController@capacitaciones');
 |--------------------------------------------------------------------------
 */
 Route::get('/contactos','ContactosController@contactos');
+
+/*
+|--------------------------------------------------------------------------
+| CARRITO CONTROLLER
+|--------------------------------------------------------------------------
+*/
+Route::get('/carrito','CarritoController@carrito');
