@@ -13,7 +13,7 @@ class CreateModifyUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('modify_users', function (Blueprint $table) {
+        /**Schema::create('modify_users', function (Blueprint $table) {
         $table->string('lastName');
         $table->date('birthday');
         $table->string('provincia');
@@ -21,7 +21,7 @@ class CreateModifyUsersTable extends Migration
         $table->integer('level');
         $table->string('avatar');
         $table->string('cargo');
-      });
+      }); */
     }
 
     /**
