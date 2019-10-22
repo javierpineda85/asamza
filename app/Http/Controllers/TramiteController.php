@@ -15,7 +15,7 @@ class TramiteController extends Controller
       $vac=compact('tramites','munis');
       return view('tramites',$vac);
     }
-    public function agregar(){
+    public function agregar(){ // listado de munis para cargar el select
       $munis = Muni::all();
       $vac = compact("munis");
       return view('agregar-tramite',$vac);
@@ -47,8 +47,25 @@ class TramiteController extends Controller
       }
 
       public function delete(Request $req){
+
         $tramiteDelete = Tramite::find($req->id);
-        $tramiteDelete -> delete();
+
+        $file_name = $tramiteDelete['file']; //obtengo el nombre del archivo
+
+        $file_path =storage_path()."/app/public/"; // obtengo la ubicacion del archivo
+        $tramiteRuoteDelete= $file_path .$file_name; // completo la ubicacion con el nombre del tramite
+
+
+        unlink($tramiteRuoteDelete); //elimina el archivo de la carpeta public
+        $tramiteDelete -> delete(); // elimina el archivo de la BD
+
         return redirect("/municipalidades");
+      }
+
+      public function listarTramite(){
+        $tramites = Tramite::all();
+        $munis = Muni::all();
+        $vac=compact('tramites','munis');
+        return view('modificar-tramite',$vac);
       }
 }
