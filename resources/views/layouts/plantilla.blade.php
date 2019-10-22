@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148376301-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  @yield('analytics')
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-148376301-1');
-    </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>@yield('title')</title>
@@ -58,7 +48,7 @@
                     @if (Auth::check())
                     <label class="usuario">
                         ¡Hola <b>{{Auth::user()->name}}</b>!
-                        {{-- <img src="storage/{{Auth::user()->avatar}}" alt="" width="40px" border-radius=50%> --}}
+                        {{-- <img src="storage/{{Auth::user()->avatar}}" alt="" width="40px" border-radius="50%"> --}}
                     </label>
                     @endif
                 </div>
@@ -81,16 +71,17 @@
                     @if (Auth::check())
                     {{-- @if (Auth::user()->level === 1) --}}
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administración
+                    <li class="nav-item">
+                      <!--  <a class="nav-link" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Panel de Control
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/admin" style=color:white>Panel de Control</a>
                             <a class="dropdown-item" href="/agregar-tramite" style=color:white>Agregar trámites</a>
                             <a class="dropdown-item" href="#" style=color:white>Agregar Trámites on-line</a>
                             <a class="dropdown-item" href="#" style=color:white>Agregar Capacitación</a>
-                        </div>
+                        </div> -->
+                        <a class="nav-link" href="/admin">Panel de Control</a>
                     </li>
                     {{-- @endif --}}
                     @endif

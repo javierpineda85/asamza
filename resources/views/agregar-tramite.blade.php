@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.dashboard')
 @section('css')
 {{-- <link rel="stylesheet" href="../../css/styleTramites.css"> --}}
 <link rel="stylesheet" href="../../css/stylecontacto.css">
@@ -11,7 +11,7 @@ Agregar trámites
 
 
 @section('main')
-<div class="contenedorcontacto">
+<div class="contenedorcontacto m-auto">
 
     <form action="/agregar-tramite" class="form" method="POST" enctype="multipart/form-data">
         @csrf
@@ -69,12 +69,13 @@ Agregar trámites
         </div>
         <br>
         {{-- <input type="submit" class="btn-submit" value="Guardar"> --}}
-        <button class="btn btn-secondary" type="submit" name="button">
+        <button class="btn btn-info" type="submit" name="button">
             {{ __('Guardar') }}
         </button>
-        <button class="btn btn-secondary" type="reset" name="button">
+        <button class="btn btn-info" type="reset" name="button">
             {{ __('Limpiar Campos') }}
         </button>
+
 
     </form>
 

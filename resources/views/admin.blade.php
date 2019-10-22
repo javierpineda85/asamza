@@ -1,66 +1,87 @@
-@extends('layouts.plantilla')
+@extends('layouts.dashboard')
 @section('css')
-<link rel="stylesheet" href="../../css/style-header.css">
-
+<link rel="stylesheet" href="../../css/dashboard.css">
 @endsection
-
-
 @section('title')
-Administración
+Panel de Control
 @endsection
 
 
 @section('main')
-<div class="inicio">
-    <div class="banner-standard bg-admin">
-        <h2 class="banner-texto-standard titulos-naranja"><span>ADMINISTRACION</span></h2>
+
+<div class="row pt-md-5 mt-md-3 mb-5">
+    <div class="col-xl-6 col-sm-6 p-2">
+        <div class="card card-common">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <i class="fas fa-file-alt fa-3x text-info"></i>
+
+                </div>
+                <div class="text-right text-secondary">
+                    <h5>Agregar o modificar trámites</h5>
+
+                </div>
+                <div class="card-footer text-secondary">
+
+                    <span class="btn btn-success"> <a href="/agregar-tramite">Agregar</a></span>
+                    <span class="btn btn-success"> <a href="/modificar-tramite">Modificar</a></span>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="container-fluid jumbotron pb-0 mb-0">
-        <div class="row montserrat text-center font-small">
-            <div class="col-md-6 capacitacion">
-                <h2 class="bg-orange color-white">CAPACITACIONES</h2>
-                <p>
-                    Gestioná las capacitaciones desde aqui
-                </p>
-                <p>
-                    <a class="btn" href="/capacitaciones">Acceder</a>
-                </p>
+    <div class="col-xl-6 col-sm-6 p-2">
+        <div class="card card-common">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <i class="fas fa-globe-americas fa-3x text-info"></i>
+                </div>
+                <div class="text-right text-secondary">
+                    <h5>Agregar o modificar trámites online</h5>
+                </div>
+                <div class="card-footer text-secondary">
+                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
+                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                </div>
             </div>
-
-
-            <div class="col-md-6 muni">
-                <h2 class="bg-black color-white">MUNICIPALIDADES</h2>
-                <p>
-                    Gestioná los trámites de las municipalidades
-                </p>
-                <p>
-                    <a class="btn" href="/agregar-tramite">Acceder</a>
-                </p>
+        </div>
+    </div>
+    <div class="col-xl-6 col-sm-6 p-2">
+        <div class="card card-common">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <i class="fas fa-users fa-3x text-info"></i>
+                </div>
+                <div class="text-right text-secondary">
+                    <h5>Administrar usuarios</h5>
+                </div>
+                <div class="card-footer text-secondary">
+                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
+                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                </div>
             </div>
-
-            <div class="col-md-6 muni">
-                <h2 class="bg-orange color-white">USUARIOS</h2>
-                <p>
-                    Gestioná los permisos de usuarios desde aqui
-                </p>
-                <p>
-                    <a class="btn" href="/perfil">Acceder</a>
-                </p>
+        </div>
+    </div>
+    <div class="col-xl-6 col-sm-6 p-2">
+        <div class="card card-common">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <i class="fas fa-book-reader fa-3x text-success"></i>
+                </div>
+                <div class="text-right text-secondary">
+                    <h5>Agregar o modificar capacitaciones</h5>
+                </div>
+                <div class="card-footer text-secondary">
+                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
+                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                </div>
             </div>
-
-
-            <div class="col-md-6 muni">
-                <h2 class="bg-black color-white">PROYECTOS</h2>
-                <p>
-                    Gestioná los proyectos de ASAMZA desde acá.
-                </p>
-                <p>
-                    <a class="btn" href="/working">Acceder</a>
-                </p>
-            </div>
-
         </div>
     </div>
 </div>
+
+
+<!-- end cards  -->
+
+
+
 @endsection

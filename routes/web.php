@@ -17,7 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/register', 'RegisterController@create');
 // Route::post('/register', 'RegisterController@create');
 Route::get('/working','HomeController@working');
-Route::get('/admin','HomeController@admin');// ->middleware("Auth");
+Route::get('/admin','HomeController@admin')->middleware("auth");
 /*
 |--------------------------------------------------------------------------
 |USER CONTROLLER
@@ -26,6 +26,7 @@ Route::get('/admin','HomeController@admin');// ->middleware("Auth");
 */
 
 Route::get('/perfil', 'UserController@perfil');
+Route::get('/user/download/{file_name}/{file_title}','UserController@download')->middleware("auth");
 /*
 |--------------------------------------------------------------------------
 | MUNI CONTROLLER
@@ -45,9 +46,10 @@ Route::get('/municipalidades/{id}', 'MuniController@detail');// va a listar los 
 // Route::get('/tramites/{id}', 'TramiteController@all');
 Route::get('/tramites/{id}', 'TramiteController@find');
 Route::get('/tramites-online', 'TramiteController@online');
-Route::get('/agregar-tramite','TramiteController@agregar')->middleware("auth");
-Route::post('/agregar-tramite','TramiteController@store')->middleware("auth");
+Route::get('/agregar-tramite','TramiteController@agregar')->middleware("auth"); // lista las munis
+Route::post('/agregar-tramite','TramiteController@store')->middleware("auth"); // guarda en la muni
 Route::post('/tramites/eliminar', 'TramiteController@delete')->middleware("auth");
+Route::get('/modificar-tramite','TramiteController@listarTramite')->middleware("auth"); //lsitado de tramites
 
 /*
 |--------------------------------------------------------------------------
