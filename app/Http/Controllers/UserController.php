@@ -10,34 +10,53 @@ class UserController extends Controller
     public function perfil(){
       return view('perfil');
     }
-    public function downloadFile($src,$file_title){ // metodo para obtener un archivo
 
-      if (is_file($src)) {
 
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $content_type = finfo_file($finfo, $src);
-        finfo_close($finfo);
-        $file_name = basename($src).PHP_EOL;
-        $extention = explode(".",$file_name); //obtengo la extension del archivo en un array
-        $newName = $file_title .".".$extention[1]; // concateno el title con la extension
+    public function listar(Request $req ){ //lista todos los usuarios
 
-        $size = filesize($src);
-        header("Content-Type: $content_type");
-        header("Content-Disposition:attachment; filename=$newName"); // asigno el nombre del archivo con la extension para q se descargue con el nombre y no la ruta
-        header("Content-Transfer-Encoding: binary");
-        header("Content-Length:$size");
-        readfile($src);
-
-        return true;
-      } else {
-        return false;
-      }
+      $usuarios =  User::orderBy('lastName','asc')
+                ->paginate(10);
+      $vac=compact("usuarios");
+      return view('listado-de-usuarios',$vac);
     }
 
-    public function download($file_name,$file_title){ // esta funcion es la descargar el archivo recuperado en la funcion de arriba
-      if (!$this->downloadFile(storage_path()."/app/public/$file_name",$file_title)) {// si no se ha podido descargar, redireccionamos atras.
+   public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
 
-        return redirect()->back();
-      }
+      $email = $req ->get('email');
+
+      $usuarios =  User::orderBy('lastName','asc')
+                ->email($email)
+                ->paginate(10);
+      $vac=compact("usuarios");
+      return view('listado-de-usuarios',$vac);
+    }
+
+    public function listarPorApellido(Request $req ){ //lista todos los usuarios por apellido
+
+      $lastName = $req ->get('lastName');
+
+      $usuarios =  User::orderBy('lastName','asc')
+                ->LastName($lastName)
+                ->paginate(10);
+      $vac=compact("usuarios");
+      return view('listado-de-usuarios',$vac);
+    }
+
+    public function modificarUsuario($id){
+      $usuario = User::find($id);
+      $vac=compact("usuario");
+      return view('gestion-de-usuario',$vac);
+
+    }
+
+    public function deleteUsuario(Request $req){
+
+      $userDelete = User::find($req->id);
+      $userDelete -> delete();
+
+      $usuarios =  User::orderBy('lastName','asc')
+                ->paginate(10);
+      $vac=compact("usuarios");
+      return view('listado-de-usuarios',$vac);
     }
 }
