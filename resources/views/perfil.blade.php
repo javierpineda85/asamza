@@ -28,18 +28,6 @@ Perfil de Usuario
                 <i class="fas fa-user"></i>
                 <input type="text" name="name" placeholder=" Apellido " autofocus required>
             </div>
-            {{-- <div class="formLog" id="userName">
-                  <i class="fas fa-user"></i>
-                  <input type="text" name="name" placeholder=" Nombre de Usuario " autofocus required> --}}
-
-            {{-- <div class="formLog" id="fechaDeNac">
-        <i class="fas fa-birthday-cake"></i>
-        <input type="date" name="name" placeholder=" Fecha de Nacimiento DD/MM/AAAA " autofocus required>
-    </div> --}}
-            {{-- <div class="formLog" id="provDeNac">
-                  <i class="fab fa-font-awesome-flag"></i>
-                  <input type="text" name="name" placeholder=" Provincia de nacimiento " autofocus required>
-              </div> --}}
 
             <div class="formLog" id="email">
                 <i class="fas fa-at"></i>

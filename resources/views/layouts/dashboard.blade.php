@@ -14,9 +14,6 @@
 
     <!--Personal CSS -->
 
-    <!--<link rel="stylesheet" href="../../css/app.css">
-    <link rel="stylesheet" href="../../css/style-header.css">
-    <link rel="stylesheet" href="../../css/stylefooter.css">-->
     <link rel="stylesheet" href="../../css/dashboard.css">
     @yield('css')
 
@@ -40,10 +37,10 @@
           <div class="container-fluid">
             <div class="row">
               <!-- sidebar -->
-              <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" style="min-width: 230px;">
-                <a class="navbar-brand text-white d-block mx-auto text-center py-03 mb-4 bottom-border"href="/"><img src="img/asalogo.png" alt="asa" width="50px" border-radius="50%" class="bg-light"></a>
+              <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" style="min-width: 250px;">
+                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="img/asalogo2.png" alt="asa" width="50px" border-radius="50%" class="mt-3 mb-3"></a>
 
-                <div class="bottom-border mb-4 align-items-center">
+                <div class="bottom-border mb-4 align-items-center ">
 
                   @if (Auth::check())
                   <label class="usuario text-light justify-content-center">
@@ -61,11 +58,9 @@
                 </div>
                 <ul class="navbar-nav flex-column mt-4">
                   <li class="nav-item"> <a href="/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a>  </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a>
-
-                  </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-globe-americas text-light fa-lg mr-3"></i>Trámites Online </a></li>
+                  <li class="nav-item"> <a href="/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a>  </li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a></li>
+                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-globe-americas text-light fa-lg mr-3"></i>Noticias </a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Capacitaciones</a> </li>
 
                 </ul>
@@ -75,25 +70,13 @@
               <!-- top navbar -->
               <div class="col-xl-10 col-lg-9 col-md-8 ml-auto fixed-top py-2 top-navbar">
                 <div class="row align-items-center">
-                  <div class="col-md-4">
-                    <h4 class="text-light text-uppercase mb-0">Panel de Control</h4>
+                  <div class="col-md-8">
+                    <h4 class="text-light mb-0 ml-4">PANEL DE CONTROL @yield('admin-section')</h4>
                   </div>
-                  <div class="col-md-5">
-                    <!--
-                    <form class="" action="index.html" method="post">
-                      <div class="input-group">
-                        <input type="text" class="form-control search-input" name="" value="" placeholder="Buscar...">
-                        <button type="button" name="button" class="btn btn-white search-button"><i class="fas fa-search text-danger"></i></button>
-                      </div>
-                    </form>
-                    -->
-                  </div>
+
                   <div class="col-md-3">
                     <ul class="navbar-nav">
-                      <!--
-                      <li class="nav-item icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-comments text-muted fa-lg"></i></a></li>
-                      <li class="nav-item icon parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-bell text-muted fa-lg"></i></a></li>
-                      -->
+
                       <li class="nav-item ml-md-auto"><a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
                     </ul>
                   </div>
@@ -139,7 +122,7 @@
 
     <main>
       <div class="container-fluid ">
-        <div class="row">
+        <div class="row justify-content-md-center">
           <div class="col-xl-9 col-lg-9 col-md-8 ml-auto">
 
             @yield('main')

@@ -1,7 +1,9 @@
 @extends('layouts.dashboard')
+
 @section('css')
 <link rel="stylesheet" href="../../css/dashboard.css">
 @endsection
+
 @section('title')
 Panel de Control
 @endsection
@@ -18,13 +20,13 @@ Panel de Control
 
                 </div>
                 <div class="text-right text-secondary">
-                    <h5>Agregar o modificar trámites</h5>
+                    <h5>Administrar trámites</h5>
 
                 </div>
                 <div class="card-footer text-secondary">
 
                     <span class="btn btn-success"> <a href="/agregar-tramite">Agregar</a></span>
-                    <span class="btn btn-success"> <a href="/modificar-tramite">Modificar</a></span>
+                    <span class="btn btn-success"> <a href="/listado-de-tramites">Listar</a></span>
                 </div>
             </div>
         </div>
@@ -36,11 +38,11 @@ Panel de Control
                     <i class="fas fa-globe-americas fa-3x text-info"></i>
                 </div>
                 <div class="text-right text-secondary">
-                    <h5>Agregar o modificar trámites online</h5>
+                    <h5>Administrar Noticias</h5>
                 </div>
                 <div class="card-footer text-secondary">
-                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
-                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                    <span class="btn btn-success"> <a href="#">Agregar</a></span>
+                    <span class="btn btn-success"> <a href="#">Listar</a></span>
                 </div>
             </div>
         </div>
@@ -55,8 +57,8 @@ Panel de Control
                     <h5>Administrar usuarios</h5>
                 </div>
                 <div class="card-footer text-secondary">
-                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
-                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                    <!-- <span class="btn btn-success"> <a href="#">Agregar</a></span> -->
+                    <span class="btn btn-success"> <a href="/listado-de-usuarios">Listar</a></span>
                 </div>
             </div>
         </div>
@@ -68,11 +70,11 @@ Panel de Control
                     <i class="fas fa-book-reader fa-3x text-success"></i>
                 </div>
                 <div class="text-right text-secondary">
-                    <h5>Agregar o modificar capacitaciones</h5>
+                    <h5>Administrar capacitaciones</h5>
                 </div>
                 <div class="card-footer text-secondary">
-                  <span class="btn btn-success"> <a href="#">Agregar</a></span>
-                  <span class="btn btn-success"> <a href="#">Modificar</a></span>
+                    <span class="btn btn-success"> <a href="#">Agregar</a></span>
+                    <span class="btn btn-success"> <a href="#">Listar</a></span>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.plantilla')
-@section('css')
+
 @section('analytics')
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148376301-1"></script>
@@ -14,6 +14,9 @@
     gtag('config', 'UA-148376301-1');
 </script>
 @endsection
+
+@section('css')
+
 <link rel="stylesheet" href="../../css/style-header.css">
 
 @endsection
@@ -149,7 +152,7 @@ Inicio
 
 </div>
 <!--_____________________SECCIONES ESTATICAS-->
-<section class="d-flex align-content-center flex-wrap container-fluid w-100 text-white bg-black p-3 m-auto align-items-center">
+<!-- <section class="d-flex align-content-center flex-wrap container-fluid w-100 text-white bg-black p-3 m-auto align-items-center">
     <h2 class="m-auto"><span class="color-orange">2x1</span> en cursos!!!</h2>
 </section>
 
@@ -157,6 +160,6 @@ Inicio
     <div class="m-auto col-12 col-md-6" style="background: none;">
         <img src="img/tarjetas.png" width="100%" alt="tarjetas">
     </div>
-</section>
+</section> -->
 
 @endsection

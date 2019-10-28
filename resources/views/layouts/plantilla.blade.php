@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  @yield('analytics')
+    @yield('analytics')
 
 
     <meta charset="UTF-8">
@@ -69,10 +69,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-0">
                     @if (Auth::check())
-                    {{-- @if (Auth::user()->level === 1) --}}
-
+                    @if (Auth::user()->level === 1)
                     <li class="nav-item">
-                      <!--  <a class="nav-link" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <!--  <a class="nav-link" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Panel de Control
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -83,7 +82,7 @@
                         </div> -->
                         <a class="nav-link" href="/admin">Panel de Control</a>
                     </li>
-                    {{-- @endif --}}
+                    @endif
                     @endif
 
                     <li class="nav-item active">
@@ -154,12 +153,12 @@
 
         <div class="footer-container">
             <div class="footer-main">
-                <div class="footer-columna">
+                <div class="footer-columna" style="display:none">
                     <h3 class="font-weight-bolder">Suscríbete</h3>
                     <input type="email" placeholder="Escriba su Correo">
                     <input type="submit" value=" Suscribirse" class="boton-orange w-100">
                 </div>
-                <div class="footer-columna" style="margin: auto;">
+                <div class="footer-columna">
                     <h3 class="font-weight-bolder">Contactos</h3>
                     <span class="d-flex"><i class="fas fa-map-marker-alt mr-2"></i>
                         <p>244 Lorem ipsum dolor sit amet</p>
@@ -168,7 +167,7 @@
                         <p>(+54) 261 669 7897</p>
                     </span>
                     <span class="d-flex"><i class="fas fa-envelope mr-2"></i>
-                        <p>info@asamendoza.org</p>
+                        <p><a href="mailto:info@asamendoza.org" style="color:white">info@asamendoza.org </a></p>
                     </span>
                 </div>
                 <div class="footer-columna">
@@ -181,7 +180,7 @@
         <div class="footer-copy-redes">
             <div class="main-copy-redes">
                 <div class="footer-copy">
-                    <p>Diseñado y programado por <b>thebigtable.com</b></p>
+                    <p>Diseñado y programado por <b> <a href="http://thebigtable.com.ar" style="color:white;">thebigtable.com.ar</a></b></p>
                 </div>
                 <div class="footer-redes">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>

@@ -26,7 +26,11 @@ Route::get('/admin','HomeController@admin')->middleware("auth");
 */
 
 Route::get('/perfil', 'UserController@perfil');
-Route::get('/user/download/{file_name}/{file_title}','UserController@download')->middleware("auth");
+Route::get('/listado-de-usuarios', 'UserController@listar')->middleware("auth"); //lista todos los usuarios
+Route::get('/listado-de-usuariosPorMail', 'UserController@listarPorMail')->middleware("auth"); //lista todos los usuarios por email
+Route::get('/listado-de-usuariosPorApellido', 'UserController@listarPorApellido')->middleware("auth"); //lista todos los usuarios por email
+Route::get('/modificar-usuario-{id}','UserController@modificarUsuario')->middleware("auth");
+Route::post('/eliminar-usuario-{id}', 'UserController@deleteUsuario')->middleware("auth");
 /*
 |--------------------------------------------------------------------------
 | MUNI CONTROLLER
@@ -34,7 +38,7 @@ Route::get('/user/download/{file_name}/{file_title}','UserController@download')-
 |--------------------------------------------------------------------------
 */
 Route::get('/municipalidades', 'MuniController@all');
-Route::get('/municipalidades/{id}', 'MuniController@detail');// va a listar los tramites por muni
+Route::get('/municipalidades={id}', 'MuniController@detail');// va a listar los tramites por muni
 
 /*
 |--------------------------------------------------------------------------
@@ -42,15 +46,11 @@ Route::get('/municipalidades/{id}', 'MuniController@detail');// va a listar los 
 |--------------------------------------------------------------------------
 */
 
-// Route::get('/tramites/{id}', 'TramiteController@all');
-// Route::get('/tramites/{id}', 'TramiteController@all');
-Route::get('/tramites/{id}', 'TramiteController@find');
+
 Route::get('/tramites-online', 'TramiteController@online');
 Route::get('/agregar-tramite','TramiteController@agregar')->middleware("auth"); // lista las munis
-Route::post('/agregar-tramite','TramiteController@store')->middleware("auth"); // guarda en la muni
-Route::post('/tramites/eliminar', 'TramiteController@delete')->middleware("auth");
-Route::get('/modificar-tramite','TramiteController@listarTramite')->middleware("auth"); //lsitado de tramites
-
+Route::get('/listado-de-tramites','TramiteController@listarTramite')->middleware("auth"); //listado de tramites
+Route::get('/listado-por-municipio','TramiteController@listarPorMuni')->middleware("auth"); //listado por municipio
 /*
 |--------------------------------------------------------------------------
 | NOSOTROS CONTROLLER
@@ -82,3 +82,13 @@ Route::get('/contactos','ContactosController@contactos');
 |--------------------------------------------------------------------------
 */
 Route::get('/carrito','CarritoController@carrito');
+
+/*
+|--------------------------------------------------------------------------
+|FILE CONTROLLER
+
+|--------------------------------------------------------------------------
+*/
+Route::get('/file/download/{file_name}/{file_title}','FileController@download')->middleware("auth");
+Route::post('/agregar-tramite','FileController@store')->middleware("auth"); // guarda en la muni
+Route::post('/tramites/eliminar', 'FileController@delete')->middleware("auth");

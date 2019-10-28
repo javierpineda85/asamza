@@ -26,32 +26,15 @@ Trámites de {{$munis->name}}
         <ul>
             <section class="seccionesmuni">
                 <li>
-                    {{-- <p><a href="/tramites/{{$tramite->id}}">{{$tramite->title}}</a></p> --}}
+                    
 
                     <p>
-                        <a href="/user/download/{{$tramite->file}}/{{$tramite->title}}"> {{$tramite->title}} </a>
+                        <a href="/file/download/{{$tramite->file}}/{{$tramite->title}}"> {{$tramite->title}} </a>
 
                     </p>
                     <p>{{$tramite->description}}</p>
 
-                  {{--  @if (Auth::check())
 
-                    @if (auth()->user()->email =='javier@correo.com')
-
-
-                    <div class="checked">
-
-
-                        <button type="button" class="btn btn-secondary">Modificar</button>
-                        <form class="" action="/tramites/eliminar" method="post">
-                            @csrf
-                            <input type="hidden" name="id" value="{{$tramite->id}}">
-                            <button type="submit" class="btn btn-danger" onclick="deleletconfig()">Eliminar</button>
-                        </form>
-
-                    </div>
-                    @endif
-                    @endif --}}
                 </li>
         </ul>
         @endforeach
