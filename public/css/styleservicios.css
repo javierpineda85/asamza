@@ -4,7 +4,10 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.bg-ss{background-image: url("../img/serviciosimg.jpg");}
+.bg-ss{
+  background-image: url("../img/serviciosimg.jpg");
+  height: 350px;
+}
 
 
 .textotitulo h2{

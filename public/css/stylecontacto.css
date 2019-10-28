@@ -3,7 +3,10 @@
   margin-bottom: 10px;
 
 }
-.bg-contacto{background-image: url("../img/contactoimagen.jpg");}
+.bg-contacto{
+  background-image: url("../img/contactoimagen.jpg");
+  height: 350px;
+}
 
 
 .contenedorcontacto .form .form-header .form-titulo{

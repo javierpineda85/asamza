@@ -3,7 +3,10 @@ contenedordiv { /Este contenedor me permite centrar la imagen /
  flex-direction: row;
  justify-content: center;
 }
-.bg-muni{background-image: url("../img/asa-03.jpg");}
+.bg-muni{
+  background-image: url("../img/asa-03.jpg");
+  height: 350px;
+}
 .muni{
  font-family: "Montserrat", sans-serif;
 }

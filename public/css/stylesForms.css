@@ -88,7 +88,9 @@ div.formLog {
     margin-bottom: 15px;
 
 }
-
+.hidden{
+  display: none;
+}
 p.info {
     display: none;
     width: 98%;

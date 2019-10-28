@@ -1,4 +1,7 @@
-.bg-faq{background-image: url("../img/bg-faq.jpg");}
+.bg-faq{
+  background-image: url("../img/bg-faq.jpg");
+  height: 350px;
+  }
 .tarjeta{
   padding: 20px;
   text-align: center !important;

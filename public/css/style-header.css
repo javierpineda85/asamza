@@ -24,7 +24,7 @@ body {
 .w-960 {
     max-width: 960px;
 }
-.bg-ss{background-image: url("../img/serviciosimg.jpg");}
+.bg-ss{background-image: url("../img/serviciosimg.jpg");height: 350px;}
 .bg-admin{background-image: url("../img/administracion.jpg");}
 .bg-proyectos{background-image: url("../img/proyectos.jpg");}
 
@@ -53,7 +53,7 @@ body {
   color:#E27F41 !important;
   font-weight: bold !important;
   font-style: italic;
-  font-size: 25px;
+  /*font-size: 16px; */
 }
 label.usuario{
   font-size: 18px;
@@ -131,6 +131,9 @@ a.nav-link, .dropdown-menu a {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
+}
+section#slider{
+  display: block;
 }
 
 .carousel-caption {
@@ -215,7 +218,7 @@ a.nav-link, .dropdown-menu a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 500px;
+    height:350px;
     margin-top: 0px;
     margin-bottom: 50px;
 }
@@ -237,6 +240,7 @@ a.nav-link, .dropdown-menu a {
 }
 
 @media only screen and (min-width: 768px) {
+
   .banner-texto-standard {
       background: rgba(0, 0, 0, 0.5);
       padding: 30px 20px;
@@ -274,4 +278,12 @@ a.nav-link, .dropdown-menu a {
       display: none;
 
  }
+ section#slider{
+   display: none;
+ }
+}
+@media (max-width: 767px) {
+  section#slider{
+    display: none;
+  }
 }

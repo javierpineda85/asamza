@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,300i,400,400i,800,800i&display=swap');
 body{
   font-family: 'Montserrat', sans-serif;
 }
@@ -10,7 +11,7 @@ a{
 
 /* navbar */
 .sidebar{
-  height: auto;
+  height: 98%;
   background-color: black;
   box-shadow: 5px 7px 25px #999;
 }
