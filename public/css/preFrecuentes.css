@@ -46,6 +46,11 @@ div.titulo h3#naranja {
   color: white;
 }
 
+.preguntasFrecuentes h4 {
+  background-color: #E27F41;
+  color: white;
+  text-decoration: none;
+}
 .preguntasFrecuentes p {
     margin: 5px;
     font-size: 15px;
