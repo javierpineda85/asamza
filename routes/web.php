@@ -12,12 +12,14 @@
 */
 Auth::routes();
 
-Route::get('/', "HomeController@home");
+Route::get('/', "HomeController@index");
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/register', 'RegisterController@create');
 // Route::post('/register', 'RegisterController@create');
 Route::get('/working','HomeController@working');
-Route::get('/admin','HomeController@admin')->middleware("auth");
+//Route::get('/admin/admin','AdminController@index')->middleware("auth", "role:admin", "role:superAdmin");
+Route::get('/admin/admin','AdminController@index')->middleware('auth');
+
 /*
 |--------------------------------------------------------------------------
 |USER CONTROLLER
@@ -26,11 +28,11 @@ Route::get('/admin','HomeController@admin')->middleware("auth");
 */
 
 Route::get('/perfil', 'UserController@perfil');
-Route::get('/listado-de-usuarios', 'UserController@listar')->middleware("auth"); //lista todos los usuarios
-Route::get('/listado-de-usuariosPorMail', 'UserController@listarPorMail')->middleware("auth"); //lista todos los usuarios por email
-Route::get('/listado-de-usuariosPorApellido', 'UserController@listarPorApellido')->middleware("auth"); //lista todos los usuarios por email
-Route::get('/modificar-usuario-{id}','UserController@modificarUsuario')->middleware("auth");
-Route::post('/eliminar-usuario-{id}', 'UserController@deleteUsuario')->middleware("auth");
+Route::get('/admin/usuarios/listado-de-usuarios', 'UserController@listar')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios
+Route::get('/admin/usuarios/listado-de-usuariosPorMail', 'UserController@listarPorMail')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios por email
+Route::get('/admin/usuarios/listado-de-usuariosPorApellido', 'UserController@listarPorApellido')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios por email
+Route::get('/admin/usuarios/modificar-usuario-{id}','UserController@modificarUsuario')->middleware("auth",'role:admin', 'role:superAdmin');
+Route::post('/admin/usuarios/eliminar-usuario-{id}', 'UserController@deleteUsuario')->middleware("auth",'role:admin', 'role:superAdmin');
 /*
 |--------------------------------------------------------------------------
 | MUNI CONTROLLER
@@ -47,10 +49,11 @@ Route::get('/municipalidades={id}', 'MuniController@detail');// va a listar los 
 */
 
 
-Route::get('/tramites-online', 'TramiteController@online');
-Route::get('/agregar-tramite','TramiteController@agregar')->middleware("auth"); // lista las munis
-Route::get('/listado-de-tramites','TramiteController@listarTramite')->middleware("auth"); //listado de tramites
-Route::get('/listado-por-municipio','TramiteController@listarPorMuni')->middleware("auth"); //listado por municipio
+Route::get('/admin/tramites/tramites-online', 'TramiteController@online');
+Route::get('/admin/tramites/agregar-tramite','TramiteController@agregar')->middleware("auth","role:superAdmin"); // lista las munis
+Route::get('/admin/tramites/modificar-tramite-{id}','TramiteController@modificarTramite')->middleware("auth","role:superAdmin");
+Route::get('/admin/tramites/gestion-de-tramites','TramiteController@listarMunicipios')->middleware("auth","role:superAdmin"); //listado de tramites
+Route::get('/admin/tramites/listado-por-municipio-{id}','TramiteController@listarPorMuni')->middleware("auth","role:superAdmin"); //listado por municipio
 /*
 |--------------------------------------------------------------------------
 | NOSOTROS CONTROLLER
@@ -92,3 +95,10 @@ Route::get('/carrito','CarritoController@carrito');
 Route::get('/file/download/{file_name}/{file_title}','FileController@download')->middleware("auth");
 Route::post('/agregar-tramite','FileController@store')->middleware("auth"); // guarda en la muni
 Route::post('/tramites/eliminar', 'FileController@delete')->middleware("auth");
+
+/*
+|--------------------------------------------------------------------------
+|Rutas de errores
+
+|--------------------------------------------------------------------------
+*/
