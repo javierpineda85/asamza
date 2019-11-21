@@ -31,7 +31,7 @@ Panel de Control
                 </div>
             </form>
         </div>
-        <button class="btn btn-info" type="reset" name="button"> <a href="/listado-de-usuarios">Listar todo</a></button>
+        <button class="btn btn-info" type="reset" name="button"> <a href="/admin/usuarios/listado-de-usuarios">Listar todo</a></button>
     </div>
     <h3 class="text-muted text-center mb-3 mt-3">Listado de Usuarios</h3>
     <table class="table table-striped table-hover">
@@ -41,7 +41,7 @@ Panel de Control
                 <th>Apellido y Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
-                <th>Nivel</th>
+                <th>Privilegios</th>
                 <th>Actualizar</th>
                 <!-- <th>Eliminar</th> -->
         </thead>
@@ -54,7 +54,7 @@ Panel de Control
                 <td>{{$usuario->email}} </td>
                 <td> {{$usuario->phone}}</td>
                 <td> {{$usuario->level}}</td>
-                <td><button class="btn btn-info btn-secondary"> <a href="/modificar-usuario-{{$usuario->id}}">Actualizar </a></button> </td>
+                <td><button class="btn btn-info btn-secondary"> <a href="/admin/usuarios/modificar-usuario-{{$usuario->id}}">Actualizar</a></button> </td>
 
             </tr>
             @endforeach

@@ -1,12 +1,11 @@
-
 @extends('layouts.plantilla')
 
 @section('css')
-  <link rel="stylesheet" href="../../css/stylesForms.css">
+<link rel="stylesheet" href="../../css/stylesForms.css">
 @endsection
 
 @section('title')
-  Ingresar al Sitio
+Ingresar al Sitio
 @endsection
 
 @section('main')
@@ -24,49 +23,51 @@
             <img class="logo" src="img/asalogo.png" alt="">
 
             <form class="login" action="{{ route('login') }}" method="post">
-              @csrf
+                @csrf
                 <h2 class="text-center">Ingresar</h2>
 
 
-                    <div class="formLog" id="email">
-                        <p class="info">Ingresá tu correo electrónico</p>
-                        <i class="fas fa-at"></i>
-                        <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" value="{{old( 'email' )}}" autofocus required>
-                    </div>
+                <div class="formLog" id="email">
+                    <p class="info">Ingresá tu correo electrónico</p>
+                    <i class="fas fa-user"></i>
+                    <input id="email" type="email" name="email" placeholder="ejemplo@correo.com" value="{{old('email' )}}" autofocus required>
+                </div>
 
-                    <div class="formLog" id="password">
-                        <p class="info">Ingresá tu contraseña</p>
-                        <i class="fas fa-key"></i>
-                        <input id="password" type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
-                    </div>
+                <div class="formLog" id="password">
+                    <p class="info">Ingresá tu contraseña</p>
+                    <i class="fas fa-key"></i>
+                    <input id="password" type="password" name="password" placeholder="Ingresá tu contraseña" autofocus required>
+                </div>
 
-                    <button class="form" type="submit" name="button">{{ __('Entrar') }}</button>
+                <button class="form" type="submit" name="button">{{ __('Entrar') }}</button>
 
-                    @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Olvidé mi contraseña!') }}
-                        </a>
-                    @endif
+                @if (Route::has('password.request'))
+                <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{ __('Olvidé mi contraseña!') }}
+                </a>
+                @endif
 
-                    <div class="formLog" id="recordar">
+                <div class="formLog" id="recordar">
 
-                      <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <div class="form-check">
+                      <input class="chkbx" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        <label class="form-check-label" id="remember" for="remember">
 
-                          <label class="form-check-label" for="remember">
-                              {{ __('Recuerdame') }}
-                          </label>
-                      </div>
+                            {{ __('Recuérdame') }}
+                        </label>
 
-                        <p class="formLog">Al ingresar aceptas nuestras políticas de uso.</p><br>
-
-                        <p class="formLog">Si todavía no estás registrado
-                            <button class="form orange-button" >
-                              <a href="/register" class="formLog">presiona aquí</a>
-                            </button>
-                          </p>
 
                     </div>
+
+                    <p class="formLog">Al ingresar aceptas nuestras políticas de uso.</p><br>
+
+                    <p class="formLog">Si todavía no estás registrado
+                        <button class="form orange-button" id="btn-to-register">
+                            <a href="/register" class="formLog">presiona aquí</a>
+                        </button>
+                    </p>
+
+                </div>
 
             </form>
 

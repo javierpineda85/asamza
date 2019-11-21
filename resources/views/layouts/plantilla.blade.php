@@ -61,7 +61,7 @@
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom-orange">
-            <a class="navbar-brand" href="/"><img src="img/asalogo.png" alt="asa" width="100px"></a>
+            <a class="navbar-brand" href="/"><img src="img/asalogo.png" alt="asa" width="60px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,7 +69,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-0">
                     @if (Auth::check())
-                    @if (Auth::user()->level === 1)
+                    @if(Auth::user()->hasRole('admin','superAdmin'))
                     <li class="nav-item">
                         <!--  <a class="nav-link" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Panel de Control
@@ -80,7 +80,7 @@
                             <a class="dropdown-item" href="#" style=color:white>Agregar Trámites on-line</a>
                             <a class="dropdown-item" href="#" style=color:white>Agregar Capacitación</a>
                         </div> -->
-                        <a class="nav-link" href="/admin">Panel de Control</a>
+                        <a class="nav-link" href="/admin/admin">Panel de Control</a>
                     </li>
                     @endif
                     @endif

@@ -23,7 +23,7 @@ Preguntas Frecuentes
 
                     <h2 class="mb-0">
                         <button class="btn btn-link m-auto" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h2>¿De qué se trata?</h2>
+                            <h4>¿De qué se trata?</h4>
                         </button>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="-body">
@@ -59,7 +59,7 @@ Preguntas Frecuentes
 
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed m-auto" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <h2>¿En qué consiste el sistema de Créditos?</h2>
+                            <h4>¿En qué consiste el sistema de Créditos?</h4>
                         </button>
                         <div id="collapseTwo" class="collapse" aria-labelledby="collapseTwo" data-parent="#accordionExample">
                             <div class="-body">
@@ -90,7 +90,7 @@ Preguntas Frecuentes
 
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed m-auto" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            <h2>¿Con qué recursos cuenta la licenciatura?</h2>
+                            <h4>¿Con qué recursos cuenta la licenciatura?</h4>
                         </button>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="-body">
@@ -116,7 +116,7 @@ Preguntas Frecuentes
 
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed m-auto" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                            <h2>¿En qué se distinguen los cursos de ASA?</h2>
+                            <h4>¿En qué se distinguen los cursos de ASA?</h4>
                         </button>
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                             <div class="-body">
@@ -141,7 +141,7 @@ Preguntas Frecuentes
 
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed m-auto" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                            <h2>¿Qué diseño se ajusta mejor a nuestras necesidades?</h2>
+                            <h4>¿Qué diseño se ajusta mejor a nuestras necesidades?</h4>
                         </button>
                         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                             <div class="-body">

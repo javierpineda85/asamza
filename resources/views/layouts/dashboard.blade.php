@@ -38,7 +38,7 @@
             <div class="row">
               <!-- sidebar -->
               <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top" style="min-width: 250px;">
-                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="img/asalogo2.png" alt="asa" width="50px" border-radius="50%" class="mt-3 mb-3"></a>
+                <a class="navbar-brand text-white d-block text-center py-03 mb-4 bottom-border"href="/"><img src="../../img/asalogo2.png" alt="asa" width="50px" border-radius="50%" class="mt-3 mb-3"></a>
 
                 <div class="bottom-border mb-4 align-items-center ">
 
@@ -57,9 +57,9 @@
 
                 </div>
                 <ul class="navbar-nav flex-column mt-4">
-                  <li class="nav-item"> <a href="/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a>  </li>
-                  <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a></li>
+                  <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
+                  <li class="nav-item"> <a href="/admin/usuarios/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a>  </li>
+                  <li class="nav-item"> <a href="/admin/tramites/gestion-de-tramites" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-globe-americas text-light fa-lg mr-3"></i>Noticias </a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Capacitaciones</a> </li>
 

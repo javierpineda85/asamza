@@ -25,7 +25,7 @@ Ingresar al Sitio
 
                 <div class="formLog" id="email">
                     <p class="info">Ingresá tu correo electrónico</p>
-                    <i class="fas fa-at"></i>
+                    <i class="fas fa-user"></i>
                     <input type="email" name="email" placeholder="ejemplo@correo.com" value="{{old('email' )}}" autofocus required>
                 </div>
 
@@ -55,7 +55,7 @@ Ingresar al Sitio
 
                     <p class="formLog">Al ingresar aceptás nuestras políticas de uso.</p><br>
 
-                    <p class="formLog">Si todavía no estás registrado <a href="/register" class="formLog">presioná aquí</a></p>
+                    <p class="formLog">Si todavía no estás registrado <a href="/register" class="">presioná aquí</a></p>
 
                 </div>
 

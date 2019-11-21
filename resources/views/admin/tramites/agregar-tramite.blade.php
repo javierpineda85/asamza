@@ -27,7 +27,7 @@ Agregar trámites
                     @csrf
                     <div>
                         <label for="nombre" class="form-label pt-3 mr-3">Nombre del archivo:</label>
-                        <input id="title" type="text" class="form-input @error('title') is-invalid @enderror" name="title" placeholder="Nombre " value="{{ old('title') }}" autofocus required>
+                        <input id="title" type="text" class="form-input @error('title') is-invalid @enderror" name="title" placeholder="Título" value="{{ old('title') }}" autofocus required>
                         @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -40,7 +40,7 @@ Agregar trámites
                         <label for="nombre" class="form-label pt-2" style="width:100%;">Agregar descripción:</label>
 
                         <textarea id="description" style="width:95%;" class=" @error('description') is-invalid @enderror"
-                        name="description" placeholder="Tu descripción va aqui " value="{{ old('description') }}" autofocus required></textarea>
+                        name="description" placeholder="Agrega una descripción o información adicional del trámite" value="{{ old('description') }}" autofocus required></textarea>
                         @error ('description')
 
                         <span class="invalid-feedback" role="alert">

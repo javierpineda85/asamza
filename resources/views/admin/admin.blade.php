@@ -25,8 +25,11 @@ Panel de Control
                 </div>
                 <div class="card-footer text-secondary">
 
-                    <span class="btn btn-success"> <a href="/agregar-tramite">Agregar</a></span>
-                    <span class="btn btn-success"> <a href="/listado-de-tramites">Listar</a></span>
+
+                    @if(Auth::user()->hasRole('superAdmin'))
+                      <span class="btn btn-success"> <a href="/admin/tramites/agregar-tramite">Agregar</a></span>
+                    @endif
+                    <span class="btn btn-success"> <a href="/admin/tramites/gestion-de-tramites">Gestionar</a></span>
                 </div>
             </div>
         </div>
@@ -42,7 +45,7 @@ Panel de Control
                 </div>
                 <div class="card-footer text-secondary">
                     <span class="btn btn-success"> <a href="#">Agregar</a></span>
-                    <span class="btn btn-success"> <a href="#">Listar</a></span>
+                    <span class="btn btn-success"> <a href="#">Gestionar</a></span>
                 </div>
             </div>
         </div>
@@ -58,7 +61,7 @@ Panel de Control
                 </div>
                 <div class="card-footer text-secondary">
                     <!-- <span class="btn btn-success"> <a href="#">Agregar</a></span> -->
-                    <span class="btn btn-success"> <a href="/listado-de-usuarios">Listar</a></span>
+                    <span class="btn btn-success"> <a href="/admin/usuarios/listado-de-usuarios">Listar</a></span>
                 </div>
             </div>
         </div>
@@ -74,7 +77,7 @@ Panel de Control
                 </div>
                 <div class="card-footer text-secondary">
                     <span class="btn btn-success"> <a href="#">Agregar</a></span>
-                    <span class="btn btn-success"> <a href="#">Listar</a></span>
+                    <span class="btn btn-success"> <a href="#">Gestionar</a></span>
                 </div>
             </div>
         </div>
