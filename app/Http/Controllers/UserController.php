@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
     public function perfil(){
       return view('perfil');
     }
@@ -17,7 +18,7 @@ class UserController extends Controller
       $usuarios =  User::orderBy('lastName','asc')
                 ->paginate(10);
       $vac=compact("usuarios");
-      return view('listado-de-usuarios',$vac);
+      return view('/admin/usuarios/listado-de-usuarios',$vac);
     }
 
    public function listarPorMail(Request $req ){ //lista todos los usuarios por mail
@@ -28,7 +29,7 @@ class UserController extends Controller
                 ->email($email)
                 ->paginate(10);
       $vac=compact("usuarios");
-      return view('listado-de-usuarios',$vac);
+      return view('/admin/usuarios/listado-de-usuarios',$vac);
     }
 
     public function listarPorApellido(Request $req ){ //lista todos los usuarios por apellido
@@ -39,24 +40,29 @@ class UserController extends Controller
                 ->LastName($lastName)
                 ->paginate(10);
       $vac=compact("usuarios");
-      return view('listado-de-usuarios',$vac);
+      return view('/admin/usuarios/listado-de-usuarios',$vac);
     }
 
     public function modificarUsuario($id){
       $usuario = User::find($id);
       $vac=compact("usuario");
-      return view('gestion-de-usuario',$vac);
+      return view('/admin/usuarios/gestion-de-usuario',$vac);
+
+    }
+
+    public function updateUsuario($id){
 
     }
 
     public function deleteUsuario(Request $req){
 
       $userDelete = User::find($req->id);
-      $userDelete -> delete();
+      /*$userDelete -> delete(); */
+      /*AQUI HAY QUE DARLE DE BAJA AL USUARIO PERO NO ELIMINARLO DE LA DB*/
 
       $usuarios =  User::orderBy('lastName','asc')
                 ->paginate(10);
       $vac=compact("usuarios");
-      return view('listado-de-usuarios',$vac);
+      return view('/admin/usuarios/listado-de-usuarios',$vac);
     }
 }
