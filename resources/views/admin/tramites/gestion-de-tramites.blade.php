@@ -17,12 +17,12 @@ Panel de Control
     <div class="buscar d-flex bg-light justify-content-between">
 
         <div class="m-auto">
-            <form class="" action="#" method="get">
+            <form class="" action="/listado-por-municipio" method="get">
                 @csrf
                 <div class="input-group">
 
-                    <span><i class="fas fa-search text-danger mt-2"></i></span>
-                    <input type="text" class="form-control search-input" name="muni" value="" placeholder="Buscar por Municipio ">
+                  {{--  <span><i class="fas fa-search text-danger mt-2"></i></span>
+                    <input type="text" class="form-control search-input" name="muni" value="" placeholder="Buscar por Municipio ">--}}
 
                     <button class="btn btn-info ml-5" type="reset" name="button"> <a href="/admin/tramites/agregar-tramite">Agregar Trámite</a></button>
                 </div>

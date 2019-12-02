@@ -16,14 +16,14 @@ Panel de Control
 <section class="mt-5">
     <div class="buscar d-flex bg-light ml-auto">
         <div class="row m-auto">
-            <form class="" action="/listado-de-usuariosPorMail" method="get">
+            <form class="" action="/admin/usuarios/listado-de-usuariosPorMail" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>
                     <input type="text" class="form-control search-input" name="email" value="" placeholder="Buscar por email">
                 </div>
             </form>
-            <form class="" action="/listado-de-usuariosPorApellido" method="get">
+            <form class="" action="/admin/usuarios/listado-de-usuariosPorApellido" method="get">
                 @csrf
                 <div class="input-group">
                     <span><i class="fas fa-search text-danger mt-2"></i></span>

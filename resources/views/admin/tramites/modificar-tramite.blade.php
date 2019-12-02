@@ -6,10 +6,10 @@
 @endsection
 
 @section('admin-section')
-/ Modificar trámites
+/ Modificar trámite
 @endsection
 @section('title')
-Modificar trámites
+Modificar trámite
 @endsection
 
 
@@ -26,7 +26,7 @@ Modificar trámites
                     <form action="/agregar-tramite" class="pt-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div>
-                            <label for="nombre" class="form-label pt-3 mr-3">Nombre del archivo:</label>
+                            <label for="title" class="form-label pt-3 mr-3">Nombre del archivo:</label>
                             <input id="title" type="text" class="form-input @error('title') is-invalid @enderror" name="title"
                             @if ($tramite !=null)
                             value="{{$tramite->title}}"
@@ -43,7 +43,7 @@ Modificar trámites
 
                         <div class="mt-1">
 
-                            <label for="nombre" class="form-label pt-2" style="width:100%;">Agregar descripción:</label>
+                            <label for="description" class="form-label pt-2" style="width:100%;">Modificar descripción actual:</label>
 
                             <textarea id="description" style="width:95%;" class=" @error('description') is-invalid @enderror"
                             name="description"
@@ -53,6 +53,7 @@ Modificar trámites
                                 value="{{ old('description') }}"
                               @endif
                               autofocus required>
+                              {{$tramite->description}}
                             </textarea>
                         @error ('description')
 
@@ -61,34 +62,38 @@ Modificar trámites
                         </span>
                         @enderror
                     </div>
+                    <div class="mt-1">
+
+                        <label for="muni" class="form-label pt-2" style="width:100%;">Pertenece al municipio de: {{$tramite->munis_id}}</label>
+                    </div>
 
                     <div class="mt-1 pt-3" style="width:100%">
 
-                        A cuál municipio pertenece?:
-                        <select class="  @error('muni') is-invalid @enderror" name="muni" id="muni">
+                      Reasignar al municipio de :
+                      <select class="  @error('muni') is-invalid @enderror" name="muni" id="muni">
 
-                        @foreach ($munis as $muni)
-                          @if ($tramite !=null)
-                            <option value="{{$tramite->munis_id}}">{{$tramite->munis_id}} </option>
-                          @else
-                            <option value="{{$muni->id}}" {{$muni->id == old('muni') ? "selected": ""}}>{{$muni->name}}</option>
-                          @endif
+                      @foreach ($munis as $muni)
 
-
-                        @endforeach>
-                            </select>
-                            @error('municipio')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                      <option value="{{$muni->id}}" {{$muni->id == old('muni') ? "selected": ""}}>{{$muni->name}}</option>
+                      @endforeach>
+                          </select>
+                          @error('municipio')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                     </div>
                     <div class="mt-1 mb-3 pt-2 align-items-center" id="file">
                         <p class="info"><br>Seleccioná el archivo que vas a subir. <br>
                         <b>El archivo no debe superar los 5Mb de tamaño </b></p>
 
-                        <input id="file" class="file @error('file') is-invalid @enderror" type="file" name="file" value= "{{ old('file') }}">
-                        @error('avatar')
+                        <input id="file" class="file @error('file') is-invalid @enderror" type="file" name="file"
+
+
+                            value="{{$tramite->file}}"
+
+                          required>
+                        @error('file')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -98,9 +103,7 @@ Modificar trámites
                     <button class="btn btn-success" type="submit" name="button">
                         {{ __('Guardar') }}
                     </button>
-                    <button class="btn btn-info" type="reset" name="button">
-                        {{ __('Limpiar Campos') }}
-                    </button>
+                    <button class="btn btn-info" type="reset" name="button">Limpiar campos </button>
                     <button class="btn btn-danger" type="submit" name="button">
                         {{ __('Eliminar') }}
                     </button>

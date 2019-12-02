@@ -9,7 +9,7 @@
 
 
 @section('title')
-Acceso no autorizado
+Página no encontrada
 @endsection
 
 
@@ -17,7 +17,7 @@ Acceso no autorizado
 
 <div class="container justify-content-center">
   <div class="message mt-4 mb-4 p-4" style= "max-width: 320px;">
-    <h3>No posees permiso para acceder a este contenido. <br> Por favor contacta al administrador de la página.</h1>
+    <h3>Opps! Algo salió mal. <br> Por favor revisa la URL en la barra de direcciones e intenta nuevamente.</h1>
   </div>
 </div>
 

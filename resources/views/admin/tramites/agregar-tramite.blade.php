@@ -70,7 +70,7 @@ Agregar trámites
                         <b>El archivo no debe superar los 5Mb de tamaño </b></p>
 
                         <input id="file" class="file @error('file') is-invalid @enderror" type="file" name="file" value= "{{ old('file') }}">
-                        @error('avatar')
+                        @error('file')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

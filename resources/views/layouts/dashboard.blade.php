@@ -58,9 +58,9 @@
                 </div>
                 <ul class="navbar-nav flex-column mt-4">
                   <li class="nav-item"> <a href="/admin/admin" class="nav-link text-white p-3 mb-2 current"> <i class=" fas fa-home text-light fa-lg mr-3"></i>Panel de Control</a> </li>
-                  <li class="nav-item"> <a href="/admin/usuarios/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a>  </li>
                   <li class="nav-item"> <a href="/admin/tramites/gestion-de-tramites" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-file-alt text-light fa-lg mr-3"></i>Trámites</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-globe-americas text-light fa-lg mr-3"></i>Noticias </a></li>
+                  <li class="nav-item"> <a href="/admin/usuarios/listado-de-usuarios" class="nav-link text-white p-3 mb-2 sidebar-link"><i class=" fas fa-users text-light fa-lg mr-3"></i>Usuarios</a></li>
                   <li class="nav-item"> <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"> <i class=" fas fa-book-reader text-light fa-lg mr-3"></i>Capacitaciones</a> </li>
 
                 </ul>

@@ -69,20 +69,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-0">
                     @if (Auth::check())
-                    @if(Auth::user()->hasRole('admin','superAdmin'))
+                  {{--  @if(Auth::user()->hasRole('admin','superAdmin')) --}}
                     <li class="nav-item">
-                        <!--  <a class="nav-link" href="/admin" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Panel de Control
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/admin" style=color:white>Panel de Control</a>
-                            <a class="dropdown-item" href="/agregar-tramite" style=color:white>Agregar trámites</a>
-                            <a class="dropdown-item" href="#" style=color:white>Agregar Trámites on-line</a>
-                            <a class="dropdown-item" href="#" style=color:white>Agregar Capacitación</a>
-                        </div> -->
+
                         <a class="nav-link" href="/admin/admin">Panel de Control</a>
                     </li>
-                    @endif
+                  {{--  @endif --}}
                     @endif
 
                     <li class="nav-item active">

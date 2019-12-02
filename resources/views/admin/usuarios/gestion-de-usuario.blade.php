@@ -42,10 +42,19 @@ Panel de Control
                             <input id="title" type="text" class="" name="phone" value="{{$usuario->phone}}">
                         </div>
                         <div class="mt-1 mb-3 pt-2 align-items-center">
-                            <label for="nombre" class="form-label pt-3 mr-3">Nivel de usuario:</label>
-                            <input id="title" type="text" class="w-auto" name="level" value="{{$usuario->level}}">
+                            <label for="nombre" class="form-label pt-3 mr-3">Rol actual:</label>
+                            <input id="title" type="text" class="w-auto" name="level" value="{{$usuario->rol}}">
                         </div>
+                        <div class="mt-1 mb-3 pt-2 align-items-center">
+                            <label for="nombre" class="form-label pt-3 mr-3">Nuevo rol:</label>
+                            <select class="  @error('rol') is-invalid @enderror" name="rol" id="rol">
 
+                            @foreach ($roles as $rol)
+
+                            <option value="{{$rol->id}}" {{$rol->id == old('rol') ? "selected": ""}}>{{$rol->name}}</option>
+                            @endforeach>
+                          </select>
+                        </div>
                         <button class="btn btn-success" type="submit" name="button">
                             Actualizar
                         </button>

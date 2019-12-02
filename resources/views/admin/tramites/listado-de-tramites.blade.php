@@ -44,7 +44,9 @@ Panel de Control
             <tr>
                 <td>{{$tramite->title}} </textarea></td>
                 <td>{{$tramite->description}}</textarea></td>
-                <td><button class="btn btn-info"><a href="/admin/tramites/modificar-tramite-{{$tramite->id}}">Actualizar</a></button> </td>
+                {{--<td><a href="#" class="nav-link" data-toggle="modal" data-target="#actualizar">Actualizar</i></a></td>--}}
+                <td><button class="btn btn-info"><a href="/admin/tramites/modificar-tramite-{{$tramite->id}}" >Actualizar</a></button> </td>
+                {{--<td><button class="btn btn-danger"><a href="/admin/tramites/eliminar-tramite-{{$tramite->id}}">Eliminar</a></button> </td> --}}
             </tr>
             @endforeach
 
@@ -53,6 +55,31 @@ Panel de Control
     <!-- pagination  -->
 
     <!-- pagination  -->
+
+    <!-- modal -->
+    <div class="modal fade" id="actualizar">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Qué acción deseas realizar?</h4>
+            <button type="button" name="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            Selecciona una opción a realizar con este trámite
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info" type="button" name="button" class="btn btn-success" data-dismiss="modal"><a href="/admin/tramites/modificar-tramite-">Actualizar</a></button>
+            <button type="button" name="button" class="btn btn-danger" data-dismiss="modal"><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                {{ __('Cerrar Sesión') }}</a></button>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal -->
 </section>
 
 @endsection
