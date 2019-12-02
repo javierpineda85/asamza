@@ -28,11 +28,11 @@ Route::get('/admin/admin','AdminController@index')->middleware('auth');
 */
 
 Route::get('/perfil', 'UserController@perfil');
-Route::get('/admin/usuarios/listado-de-usuarios', 'UserController@listar')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios
-Route::get('/admin/usuarios/listado-de-usuariosPorMail', 'UserController@listarPorMail')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios por email
-Route::get('/admin/usuarios/listado-de-usuariosPorApellido', 'UserController@listarPorApellido')->middleware("auth",'role:admin', 'role:superAdmin'); //lista todos los usuarios por email
-Route::get('/admin/usuarios/modificar-usuario-{id}','UserController@modificarUsuario')->middleware("auth",'role:admin', 'role:superAdmin');
-Route::post('/admin/usuarios/eliminar-usuario-{id}', 'UserController@deleteUsuario')->middleware("auth",'role:admin', 'role:superAdmin');
+Route::get('/admin/usuarios/listado-de-usuarios', 'UserController@listar')->middleware("auth"); //lista todos los usuarios  ->middleware("auth","role:admin", "role:superAdmin")
+Route::get('/admin/usuarios/listado-de-usuariosPorMail', 'UserController@listarPorMail')->middleware("auth"); //lista todos los usuarios por email
+Route::get('/admin/usuarios/listado-de-usuariosPorApellido', 'UserController@listarPorApellido')->middleware("auth"); //lista todos los usuarios por email
+Route::get('/admin/usuarios/modificar-usuario-{id}','UserController@modificarUsuario')->middleware("auth");
+Route::post('/admin/usuarios/eliminar-usuario-{id}', 'UserController@deleteUsuario')->middleware("auth");
 /*
 |--------------------------------------------------------------------------
 | MUNI CONTROLLER
@@ -50,10 +50,10 @@ Route::get('/municipalidades={id}', 'MuniController@detail');// va a listar los 
 
 
 Route::get('/admin/tramites/tramites-online', 'TramiteController@online');
-Route::get('/admin/tramites/agregar-tramite','TramiteController@agregar')->middleware("auth","role:superAdmin"); // lista las munis
-Route::get('/admin/tramites/modificar-tramite-{id}','TramiteController@modificarTramite')->middleware("auth","role:superAdmin");
-Route::get('/admin/tramites/gestion-de-tramites','TramiteController@listarMunicipios')->middleware("auth","role:superAdmin"); //listado de tramites
-Route::get('/admin/tramites/listado-por-municipio-{id}','TramiteController@listarPorMuni')->middleware("auth","role:superAdmin"); //listado por municipio
+Route::get('/admin/tramites/agregar-tramite','TramiteController@agregar')->middleware("auth"); // lista las munis
+Route::get('/admin/tramites/modificar-tramite-{id}','TramiteController@modificarTramite')->middleware("auth");
+Route::get('/admin/tramites/gestion-de-tramites','TramiteController@listarMunicipios')->middleware("auth"); //listado de tramites
+Route::get('/admin/tramites/listado-por-municipio-{id}','TramiteController@listarPorMuni')->middleware("auth"); //listado por municipio
 /*
 |--------------------------------------------------------------------------
 | NOSOTROS CONTROLLER
@@ -94,7 +94,7 @@ Route::get('/carrito','CarritoController@carrito');
 */
 Route::get('/file/download/{file_name}/{file_title}','FileController@download')->middleware("auth");
 Route::post('/agregar-tramite','FileController@store')->middleware("auth"); // guarda en la muni
-Route::post('/tramites/eliminar', 'FileController@delete')->middleware("auth");
+Route::post('/admin/tramites/eliminar-tramite-{id}', 'FileController@delete')->middleware("auth");
 
 /*
 |--------------------------------------------------------------------------
