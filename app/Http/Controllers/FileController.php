@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tramite;
 use App\File;
 
 class FileController extends Controller
@@ -60,7 +61,7 @@ class FileController extends Controller
     $newTramite->file = $fileName;
 
     $newTramite->save();
-    return redirect('/agregar-tramite');
+    return redirect('admin/tramites/agregar-tramite');
     }
 
     public function delete(Request $req){
@@ -76,6 +77,6 @@ class FileController extends Controller
       unlink($tramiteRuoteDelete); //elimina el archivo de la carpeta public
       $tramiteDelete -> delete(); // elimina el archivo de la BD
 
-      return redirect("/municipalidades");
+      return redirect("admin/admin");
     }
 }

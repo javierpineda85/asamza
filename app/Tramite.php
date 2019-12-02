@@ -11,9 +11,10 @@ class Tramite extends Model
       public function muni() {
         return $this->belongsTo("App\Muni", "muni_id");
       }
-      public function tramite() {
-        return $this->belongsTo("App\Tramite", "tramite_id");
-      }
+
+      //public function tramite() {
+      //  return $this->belongsTo("App\Tramite", "tramite_id");
+      //}
 
       //Query Scope
 

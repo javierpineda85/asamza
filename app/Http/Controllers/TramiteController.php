@@ -19,6 +19,10 @@ class TramiteController extends Controller
     public function modificarTramite($id){
       $tramite = Tramite::find($id);
       $munis = Muni::all();
+      //$tramite['muni_name']= Muni::join('tramites','munis.id', '=','tramites.munis_id')
+      //                            ->select('munis.name')
+      //                            ->get('name');
+      dd($tramite);
       $vac=compact("tramite","munis");
       return view('/admin/tramites/modificar-tramite',$vac);
 
@@ -29,22 +33,22 @@ class TramiteController extends Controller
     }
 
 
-      public function listarTramite(){ //lista todos los tramites
+      public function listarTramite(){ //lista TODOS los tramites
         $tramites = Tramite::paginate(10);
         $munis = Muni::all();
         $vac=compact('tramites','munis');
         return view('/admin/tramites/listado-de-tramites',$vac);
       }
 
-      public function listarPorMuni($id){ //lista todos los tramites por muni
+      public function listarPorMuni($id){ //lista todos los tramites por muni (viene de listado por municipios)
         $munis = Muni::find($id);
         $tramites = Tramite::where('munis_id','=',$id)->get();
         $vac=compact("munis","tramites");
-        return view('/admin/tramites/listado-de-tramites',$vac);
+        return view('/admin/tramites/listado-de-tramites',$vac); //(url: admin/tramite/listado-por-municipios-id)
 
       }
 
-      public function listarMunicipios(){
+      public function listarMunicipios(){ //lista todas las munis
         $munis =  Muni::paginate(20);
         $vac=compact("munis");
         return view('/admin/tramites/gestion-de-tramites',$vac);

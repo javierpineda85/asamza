@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Role;
 
 use Illuminate\Http\Request;
 
@@ -45,7 +46,8 @@ class UserController extends Controller
 
     public function modificarUsuario($id){
       $usuario = User::find($id);
-      $vac=compact("usuario");
+      $roles = Role::all();
+      $vac=compact("usuario","roles");
       return view('/admin/usuarios/gestion-de-usuario',$vac);
 
     }
